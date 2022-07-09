@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="63cf38b9-1157-4611-8e08-cff07f8ea433">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     pengembalian.`kd_kembali` AS pengembalian_kd_kembali,
+     pengembalian.`kd_pinjam` AS pengembalian_kd_pinjam,
+     pengembalian.`nis` AS pengembalian_nis,
+     pengembalian.`nama` AS pengembalian_nama,
+     pengembalian.`kd_buku` AS pengembalian_kd_buku,
+     pengembalian.`judul_buku` AS pengembalian_judul_buku,
+     pengembalian.`tgl_pinjam` AS pengembalian_tgl_pinjam,
+     pengembalian.`tgl_kembali` AS pengembalian_tgl_kembali,
+     pengembalian.`tgl_pengembalian` AS pengembalian_tgl_pengembalian,
+     pengembalian.`denda` AS pengembalian_denda
+FROM
+     `pengembalian` pengembalian]]>
+	</queryString>
+	<field name="pengembalian_kd_kembali" class="java.lang.String"/>
+	<field name="pengembalian_kd_pinjam" class="java.lang.String"/>
+	<field name="pengembalian_nis" class="java.lang.Integer"/>
+	<field name="pengembalian_nama" class="java.lang.String"/>
+	<field name="pengembalian_kd_buku" class="java.lang.String"/>
+	<field name="pengembalian_judul_buku" class="java.lang.String"/>
+	<field name="pengembalian_tgl_pinjam" class="java.lang.String"/>
+	<field name="pengembalian_tgl_kembali" class="java.lang.String"/>
+	<field name="pengembalian_tgl_pengembalian" class="java.lang.String"/>
+	<field name="pengembalian_denda" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<frame>
+				<reportElement uuid="3462c41b-4f80-433a-81af-f7dd506776c4" mode="Opaque" x="0" y="0" width="721" height="66" forecolor="#999999" backcolor="#999999"/>
+				<staticText>
+					<reportElement uuid="80acefd4-3e28-4f59-80a2-976e239fddce" style="Title" x="0" y="0" width="370" height="66" forecolor="#000000"/>
+					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="36" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Laporan Pengembalian]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="8c744bf9-69a8-4a0d-b3f8-71fe8f476bdf" style="SubTitle" x="370" y="37" width="316" height="29" forecolor="#000000" backcolor="#000000"/>
+					<textElement textAlignment="Right">
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[MA AL-FATHIYAH]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="ca4beef1-2bba-4b04-8c3f-43a69c98602f" mode="Opaque" x="0" y="66" width="802" height="36" forecolor="#000000" backcolor="#3333FF"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="353fae01-18ef-4d03-8485-50fb6cf1d5fa" x="649" y="12" width="144" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image>
+				<reportElement uuid="662a8966-41ba-4ad8-ac0b-d9a252894edb" x="723" y="1" width="76" height="65"/>
+				<imageExpression><![CDATA["C:\\Users\\CORONA\\Documents\\NetBeansProjects\\Tugas1\\Tugas1\\src\\Perpustakaan\\img\\Logo MA.JPG"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="96b8513f-1686-48b1-a0c7-4286b1bb38b3" style="Column header" x="0" y="0" width="91" height="18" forecolor="#000000"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Kembali]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a10bf7ac-002e-4429-8143-b9c447221b98" style="Column header" x="91" y="0" width="79" height="18" forecolor="#000000"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Pinjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5bd8131d-d3f7-43ab-ab40-1b8c1e4f0424" style="Column header" x="170" y="0" width="67" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="28f584c7-ec7a-4bd2-b1cd-d57737ab9a4f" style="Column header" x="237" y="0" width="79" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="08d338d8-69c8-4757-9504-539f7de1cc97" style="Column header" x="316" y="0" width="79" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3ccb1cb0-7038-4ed9-92d4-d9d30591656a" style="Column header" x="395" y="0" width="79" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Judul Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8bfb6a61-6633-42df-aea3-0b19ec805f6f" style="Column header" x="474" y="0" width="79" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tgl Pinjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="19034bfb-761b-436e-938b-4fad4bc8ff3d" style="Column header" x="553" y="0" width="79" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tgl Kembali]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ae3029ce-05f0-4c78-9a62-47e39214b144" style="Column header" x="632" y="0" width="115" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tgl Pengembalian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bb3ade6b-82ba-4bef-a699-712195c8b805" style="Column header" x="747" y="0" width="55" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Denda]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="ef328c86-9ce7-457d-9d4c-82ab959f21dd" x="2" y="24" width="795" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement uuid="20fd5a51-23b1-4d25-9382-318d57a575a6" style="Row" mode="Opaque" x="0" y="0" width="797" height="18"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="08e09987-f94f-444d-9b23-907e07e08ddf" style="Detail" positionType="Float" x="0" y="0" width="91" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pengembalian_kd_kembali}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="38272360-596e-4a33-b160-37dd6db14918" style="Detail" positionType="Float" x="91" y="0" width="79" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pengembalian_kd_pinjam}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="5fda01b7-fd87-4399-891c-b0e16e948f35" style="Detail" positionType="Float" x="170" y="0" width="67" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pengembalian_nis}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="3fc2cd03-b340-4d0a-9bd7-87963d565802" style="Detail" positionType="Float" x="237" y="0" width="79" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pengembalian_nama}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="f4e1ad13-2f58-49b3-ab77-65088aac95d3" style="Detail" positionType="Float" x="316" y="0" width="79" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pengembalian_kd_buku}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="8fd3e0d2-1377-472e-9989-313422e54eee" style="Detail" positionType="Float" x="395" y="0" width="79" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pengembalian_judul_buku}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="5677755e-2b9b-4026-89a8-793849e8ff8b" style="Detail" positionType="Float" x="474" y="0" width="79" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pengembalian_tgl_pinjam}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="01144a32-0f1d-4071-ad5f-7a74ab0ae1de" style="Detail" positionType="Float" x="553" y="0" width="79" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pengembalian_tgl_kembali}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="e6ed14cd-3b1f-4dfb-b56c-aab6d3dd6a5e" style="Detail" positionType="Float" x="632" y="0" width="115" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pengembalian_tgl_pengembalian}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="56a08ad8-9719-4756-9133-e68e73ccda8a" style="Detail" positionType="Float" x="747" y="0" width="50" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pengembalian_denda}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement uuid="d5674257-3001-45b0-aa4b-187b76ea7199" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="4c4eeadb-2ffd-477f-960a-f396a0dcd51b" mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="720ef2d2-c417-46d0-aea7-962c8bc229ad" style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="15d2ab36-2dd6-4f0a-b660-fe554c2fd8bb" style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="4f14755e-745d-49eb-a10e-3856eea53943" style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8bdb335a-6020-4e6d-a4d9-2f27365d8985">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     buku.`kd_buku` AS buku_kd_buku,
+     buku.`judul_buku` AS buku_judul_buku,
+     buku.`nama_pengarang` AS buku_nama_pengarang,
+     buku.`penerbit` AS buku_penerbit,
+     buku.`tahun_terbit` AS buku_tahun_terbit
+FROM
+     `buku` buku]]>
+	</queryString>
+	<field name="buku_kd_buku" class="java.lang.String"/>
+	<field name="buku_judul_buku" class="java.lang.String"/>
+	<field name="buku_nama_pengarang" class="java.lang.String"/>
+	<field name="buku_penerbit" class="java.lang.String"/>
+	<field name="buku_tahun_terbit" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="199" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f746283e-9163-421c-b7cd-4cf18f73142d" mode="Opaque" x="108" y="0" width="447" height="27" backcolor="#0066FF"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MA AL-FATHIYAH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="15ab6110-9a7e-4b98-8f96-a085b9cac2d0" mode="Opaque" x="108" y="27" width="447" height="68" backcolor="#999999"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Jl. Manunggal XIII No. 28 Jakarta Timur
+No. Telp : 02129373517
+Website : www.maalfathiyah.mysch.id | E-mail : maalfathiyah@gmail.com]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="435260bb-e6ee-41ba-8789-17baece12ac4" x="0" y="95" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="9881051a-26e9-40b7-9668-47dc42a55ffd" mode="Opaque" x="0" y="107" width="555" height="60" backcolor="#0066FF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA BUKU]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="5654301f-37a0-4c5b-a3df-736e6b4a0d3a" x="0" y="178" width="108" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="c07896f4-66b5-4d00-92ae-badc2cbaf15b" style="Column header" mode="Opaque" x="0" y="179" width="110" height="19" forecolor="#000000" backcolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Buku]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="1c5b174b-4415-4a62-91c3-0a842987b174" x="108" y="178" width="114" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="dc7dd777-a7ac-4da5-824e-27f0b34b861f" style="Column header" mode="Opaque" x="108" y="179" width="114" height="19" forecolor="#000000" backcolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Judul Buku]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="397d2b06-d82d-4679-a7d8-e85a0f612bbe" x="222" y="178" width="111" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="3e9df5dc-19b7-48f2-8e4d-7cbd560dc066" style="Column header" mode="Opaque" x="222" y="179" width="111" height="19" forecolor="#000000" backcolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Pengarang]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="72b0f123-9464-4ef4-90a6-0977070e6a60" x="333" y="178" width="111" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="b15993b7-2522-4122-a8c6-cf6ec2d4fb60" style="Column header" mode="Opaque" x="333" y="179" width="111" height="19" forecolor="#000000" backcolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Penerbit]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="45015aee-ac2a-4280-8235-2ecc93279db7" x="444" y="178" width="111" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="0328c5ab-045b-44a7-986e-c4c73ca09e15" style="Column header" mode="Opaque" x="444" y="179" width="111" height="19" forecolor="#000000" backcolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tahun Terbit]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="13049dcc-aa31-4731-a3b0-3b8266ed49e7" x="0" y="0" width="111" height="95"/>
+				<imageExpression><![CDATA["C:\\Dev\\Java Netbeans\\Tugas1\\Tugas1\\src\\Perpustakaan\\img\\Logo MA.JPG"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="11" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<frame>
+				<reportElement uuid="494c646a-9888-419f-81b4-605f92aaaae3" style="Row" mode="Opaque" x="0" y="0" width="555" height="18"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="69754308-3e96-4489-af82-e05fa180753f" style="Detail" positionType="Float" x="111" y="0" width="111" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{buku_judul_buku}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="432dc86f-62db-47ed-ba5e-6f5c195395ae" style="Detail" positionType="Float" x="222" y="0" width="111" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{buku_nama_pengarang}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="d2c20b6b-3292-417b-837b-9368fd1d8403" style="Detail" positionType="Float" x="333" y="0" width="111" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{buku_penerbit}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="48e56de2-b974-4b95-8414-57b191ba9a4e" style="Detail" positionType="Float" x="444" y="0" width="111" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{buku_tahun_terbit}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="a7649d1c-b596-4f61-9f64-40d7716f76a6" style="Detail" positionType="Float" x="0" y="0" width="111" height="18"/>
+				<textElement textAlignment="Center">
+					<font size="14" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{buku_kd_buku}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="130" splitType="Stretch">
+			<line>
+				<reportElement uuid="3e97a01b-0892-4bb3-9eeb-e645806b5854" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="098a14af-672c-44bc-a898-8b4d237d07bb" x="392" y="101" width="44" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="96b90b27-95ec-484a-adb0-21e1e29aff42" style="Column header" x="432" y="98" width="123" height="20" forecolor="#000000" backcolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="392f3d52-a990-4f08-9c9b-57ccc553b61c" x="406" y="18" width="113" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Kepala Perpustakaan,]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="50cd80a5-d7db-4e0f-970a-2d2698f76f5d" x="1" y="110" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="d4f7921d-a8dd-4d62-99c1-b85b519a0cfa" x="81" y="110" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="7" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
